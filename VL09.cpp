@@ -4,9 +4,15 @@ using namespace std;
 
 int main()
 {
-    double x, n;
-    cin >> x, n;
-    double taylor = exp(x);
-    cout << taylor;
-    return 0;
+    int x, n;
+    cin >> x >> n;
+    long long tu = 1, mau = 1;
+    double s = 0;
+    for (int i = 1; i <= n; i++)
+    {
+        tu *= x;
+        mau *= i;
+        s += (double)tu / mau;
+    }
+    cout << fixed << setprecision(2) << s;
 }
